@@ -11,6 +11,9 @@
     flex-direction: column;
     padding: 20px;
 }
+.logo Link{
+    text-decoration: none;
+}
 .chatArea .person{
     background-color: #00ffff;
     display: inline-block;
@@ -25,6 +28,11 @@
     height: 900px;
     padding: 20px 0px;
     overflow-y: scroll;
+}
+@media screen and (max-width: 520px) {
+    .chatArea{
+        height: 90vh;
+    }
 }
 .chatArea::-webkit-scrollbar{
     display: none;
@@ -63,3 +71,12 @@
     top: 4px;
     cursor: pointer;
 }
+/* footer{
+    position: fixed;
+    width: 95%;
+    margin: 0 auto;
+    bottom: 0;
+    left: 50%;
+    right: 50%;
+    transform: translate(-50%, -50%);
+} */
