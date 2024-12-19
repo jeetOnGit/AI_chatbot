@@ -11,7 +11,6 @@ function App() {
   };
 
   const generateAIResponse = async (userMessage) => {
-    // const API_KEY = "AIzaSyCUaz-kaF1lMajLPV_wHE-PSH9uwMC6AXI";
     const API_KEY = process.env.REACT_APP_API_KEY;
     const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${API_KEY}`;
 
