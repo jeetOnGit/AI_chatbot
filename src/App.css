@@ -35,7 +35,7 @@
 }
 @media screen and (max-width: 520px) {
     .chatArea{
-        height: 60vh;
+        max-height:300px;
     }
 }
 .chatArea::-webkit-scrollbar{
