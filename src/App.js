@@ -59,7 +59,7 @@ function App() {
         <header className="">
           <nav>
             <div className="logo">
-              <Link to="/">Chat AI</Link>
+              <Link to="/" className='linkTag'>Chat AI</Link>
             </div>
             <div className="icons"></div>
           </nav>
