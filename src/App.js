@@ -4,7 +4,9 @@ import { useState } from "react";
 
 function App() {
   const [inputValue, setInputValue] = useState("");
+  const [loading, setLoading] = useState(false);
   const [messages, setMessages] = useState([]);
+
 
   const handleChange = (e) => {
     setInputValue(e.target.value);
@@ -23,6 +25,8 @@ function App() {
     };
 
     try {
+      setLoading(true)
+
       const response = await fetch(url, {
         method: "POST",
         headers: {
@@ -32,8 +36,10 @@ function App() {
       });
 
       const data = await response.json();
+      setLoading(false)
       return data.candidates[0]?.content?.parts[0]?.text || "I couldn't generate a response.";
     } catch (error) {
+      setLoading(false)
       console.error("Error generating content:", error);
     }
   };
@@ -74,6 +80,7 @@ function App() {
               {message.text}
             </div>
           ))}
+          {loading && <div className="ai">AI is typing...</div>}
         </main>
 
         <footer>
